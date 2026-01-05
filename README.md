@@ -66,8 +66,26 @@
 
 ![10](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/11.png)
 
+Запустил тестирование роли на этих дистрибутивах:
+
+    molecule test
+
 ![11](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/12.png)
 
+После успешного тестирования я сделал коммит с рабочим сценарием:
+
+    git add .
+    
+    git commit -m "Добавил vector-role с Molecule тестами"
+
+Создал новый тег по семантическому версионированию:
+
+    git tag -a v1.0.0 -m "Добавил vector-role с Molecule тестами"
+    
+    git push origin main --tags
+
+
+https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 
 - - - - - - - - - - - - 
@@ -99,9 +117,6 @@
 
     Примечание: предупреждения о Missing playbook или Missing files — это просто Molecule предупреждает, что некоторые тестовые шаги (side_effect, cleanup) не имеют плейбука, но это не ошибка.
 
-
-
-https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 - - - - - - - - - - - - 
 
@@ -153,10 +168,17 @@ https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 ![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png)
 
-После успешного тестирования я сделал коммит с рабочим сценарием.
+После успешного тестирования я сделал коммит с рабочим сценарием:
 
-Затем создал тег с версией.
+    git add .
+    
+    git commit -m "Initial commit: добавлен проект TOX"
 
+Создал новый тег по семантическому версионированию:
+
+    git tag -a v1.0.1 -m "Initial commit: добавлен проект TOX"
+    
+    git push origin main --tags
 
 https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.1
 

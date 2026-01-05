@@ -119,6 +119,20 @@ https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 ![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png)
 
+В контейнере я запустил команду:
+
+    tox
+
+Вывод показал, что все шаги прошли успешно:
+
+- converge отработал без ошибок.
+
+- проверка идемпотентности (idempotence) показала changed=0.
+
+- контейнер создался и был удалён корректно (destroy и cleanup прошли без ошибок).
+
+Пояснение: это подтвердило, что роль корректно выполняется и idempotentна — повторный запуск не вносит лишних изменений.
+
 ![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png)
 
 ![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png)

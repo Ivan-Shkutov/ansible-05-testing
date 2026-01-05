@@ -50,6 +50,10 @@
 
 ![4](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/04.png)
 
+Перешёл в каталог с ролью vector-role и создал базовый сценарий Molecule по умолчанию:
+
+    molecule init scenario --driver-name docker
+
 ![5](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/05.png)
 
 ![6](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/06.png)

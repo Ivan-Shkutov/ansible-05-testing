@@ -56,6 +56,36 @@
 
 
 
+Все ключевые шаги выполнены без ошибок:
+
+PLAY RECAP *********************************************************************
+instance                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+
+failed=0 → нет ошибок
+
+unreachable=0 → все хосты доступны
+
+changed=0 на idempotence → роль идемпотентна (не делает лишних изменений при повторном запуске)
+
+Verifying step отключён, поэтому никаких ошибок там не возникло:
+
+WARNING  default ➜ verify: Skipping, verifier is disabled.
+INFO     default ➜ verify: Executed: Disabled
+
+Destroy и cleanup прошли без проблем, контейнер корректно удалён:
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=1
+
+
+Нет FAILED! или ERROR на converge, idempotence или prepare шагах.
+
+Вывод: роль установилась, idempotence проверена, тестовый контейнер создался и был удалён — Molecule полностью прошёл.
+
+Примечание: предупреждения о Missing playbook или Missing files — это просто Molecule предупреждает, что некоторые тестовые шаги (side_effect, cleanup) не имеют плейбука, но это не ошибка.
+
+
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из директории.

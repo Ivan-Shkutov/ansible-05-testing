@@ -85,7 +85,12 @@
 
     Примечание: предупреждения о Missing playbook или Missing files — это просто Molecule предупреждает, что некоторые тестовые шаги (side_effect, cleanup) не имеют плейбука, но это не ошибка.
 
+
+
+https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
+
 - - - - - - - - - - - - 
+
 
 ### Tox
 
@@ -118,4 +123,7 @@
 ![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png)
 
 
+https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.1
+
+- - - - - - - - - - - - 
 

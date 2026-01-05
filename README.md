@@ -32,6 +32,27 @@
 
 6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
+![1](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/01.png)
+
+![2](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/02.png)
+
+![3](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/03.png)
+
+![4](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/04.png)
+
+![5](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/05.png)
+
+![6](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/06.png)
+
+![7](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/07.png)
+
+![8](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/08.png)
+
+![9](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/10.png)
+
+![10](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/11.png)
+
+![11](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/12.png)
 
 
 
@@ -55,41 +76,15 @@
 
 
 
+![12](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/20.png)
 
+![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png)
 
+![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png)
 
+![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png)
 
-![1](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/01.png).
-
-![2](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/02.png).
-
-![3](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/03.png).
-
-![4](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/04.png).
-
-![5](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/05.png).
-
-![6](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/06.png).
-
-![7](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/07.png).
-
-![8](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/08.png).
-
-![9](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/10.png).
-
-![10](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/11.png).
-
-![11](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/12.png).
-
-![12](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/20.png).
-
-![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png).
-
-![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png).
-
-![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png).
-
-![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png).
+![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png)
 
 
 

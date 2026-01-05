@@ -112,6 +112,11 @@ https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 ![12](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/20.png)
 
+Я скопировал файлы роли vector-role в рабочую директорию и запустил контейнер для тестирования с помощью Docker:
+
+    docker run --privileged=True -v ~/netology/vector-role:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+
+
 ![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png)
 
 ![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png)

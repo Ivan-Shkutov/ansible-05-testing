@@ -119,6 +119,10 @@ https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 ![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png)
 
+![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png)
+
+![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png)
+
 В контейнере я запустил команду:
 
     tox
@@ -133,11 +137,11 @@ https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.0
 
 Пояснение: это подтвердило, что роль корректно выполняется и idempotentна — повторный запуск не вносит лишних изменений.
 
-![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png)
-
-![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png)
-
 ![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png)
+
+После успешного тестирования я сделал коммит с рабочим сценарием.
+
+Затем создал тег с версией.
 
 
 https://github.com/Ivan-Shkutov/ansible-05-testing/releases/tag/v1.0.1

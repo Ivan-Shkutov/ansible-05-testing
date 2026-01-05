@@ -1,52 +1,95 @@
-# Ansible Role: `vector-role`
 
-[![GitHub tag](https://img.shields.io/github/v/tag/Dmitriy-py/vector-role?sort=semver&color=blue)](https://github.com/Dmitriy-py/vector-role/releases)
+## Домашнее задание к занятию 5 «Тестирование roles»
 
-Устанавливает и конфигурирует **Vector** (современный, высокопроизводительный сборщик логов и метрик). Роль настраивает Vector для сбора системных метрик хоста и их последующей пересылки в указанный приемник (Sink), который по умолчанию настроен на ClickHouse через HTTP API.
+## Шкутов Иван Владимировчи
 
-**Внимание:** Роль использует метод установки через скачивание и распаковку бинарного файла (tarball).
+### Подготовка к выполнению
 
-## Поддерживаемые операционные системы
+1. Установите molecule и его драйвера: pip3 install "molecule molecule_docker molecule_podman.
 
-*   Debian (Buster, Bullseye)
-*   Ubuntu (Focal, Jammy, и новее)
+2. Выполните docker pull aragast/netology:latest — это образ с podman, tox и несколькими пайтонами (3.7 и 3.9) внутри.
 
----
+### Основная часть
 
-## Переменные Роли (Role Variables)
+Ваша цель — настроить тестирование ваших ролей.
 
-Настройка роли осуществляется через следующие переменные, которые должны быть определены в `vars` или `defaults/main.yml`.
+Задача — сделать сценарии тестирования для vector.
 
-| Имя Переменной | Тип | Значение по умолчанию | Описание |
-| :--- | :--- | :--- | :--- |
-| `vector_version` | String | `"0.37.1"` | **Версия Vector**, которую нужно установить. Используется для формирования URL скачивания бинарного файла. |
-| `vector_path` | String | `/opt/vector` | **Базовый каталог установки Vector.** Сюда скачивается и распаковывается архив с исполняемыми файлами. |
-| `vector_data_path` | String | `/var/lib/vector` | Каталог для логов, данных и кэша Vector. |
-| `vector_config` | String | `/etc/vector/vector.toml` | Полный путь к основному файлу конфигурации. |
-| `vector_service_state` | String | `started` | Желаемое состояние сервиса Vector после применения роли. Допустимые значения: `started`, `stopped`, `restarted`. |
-| `vector_sink_host` | String | `127.0.0.1` | **IP-адрес или FQDN сервера ClickHouse** (или другого приемника). |
-| `vector_sink_port` | Integer | `8123` | **HTTP порт ClickHouse** (или другого приемника). |
+Ожидаемый результат — все сценарии успешно проходят тестирование ролей.
 
----
 
-## Пример использования (Example Usage)
+### Molecule
 
-Пример использования в главном плейбуке (`site.yml`), где мы переопределяем значения по умолчанию, чтобы указать, куда отправлять данные:
+1. Запустите molecule test -s ubuntu_xenial (или с любым другим сценарием, не имеет значения) внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками или не отработать вовсе, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу И из чего может состоять сценарий тестирования.
 
-```yaml
----
-- name: Setup Vector collector
-  hosts: my_application_servers
-  become: yes
-  
-  roles:
-    - role: vector-role
-      # Обязательно укажите версию для установки
-      vector_version: "0.38.0" 
-      vector_sink_host: "10.10.1.100" 
-      vector_sink_port: 8123
-Лицензия
-MIT
+2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи molecule init scenario --driver-name docker.
 
-Автор
-`" Дмитрий Климов “`
+3. Добавьте несколько разных дистрибутивов (oraclelinux:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
+
+4. Добавьте несколько assert в verify.yml-файл для проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.).
+
+5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+
+6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+
+
+
+
+### Tox
+
+1. Добавьте в директорию с vector-role файлы из директории.
+
+2.Запустите docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
+
+3. Внутри контейнера выполните команду tox, посмотрите на вывод.
+
+4. Создайте облегчённый сценарий для molecule с драйвером molecule_podman. Проверьте его на исполнимость.
+
+5. Пропишите правильную команду в tox.ini, чтобы запускался облегчённый сценарий.
+
+6. Запустите команду tox. Убедитесь, что всё отработало успешно.
+
+7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+
+### После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на ваш репозиторий и скриншоты этапов выполнения задания.
+
+
+
+
+
+
+
+![1](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/01.png).
+
+![2](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/02.png).
+
+![3](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/03.png).
+
+![4](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/04.png).
+
+![5](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/05.png).
+
+![6](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/06.png).
+
+![7](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/07.png).
+
+![8](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/08.png).
+
+![9](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/10.png).
+
+![10](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/11.png).
+
+![11](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/12.png).
+
+![12](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/20.png).
+
+![13](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/21.png).
+
+![14](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/22.png).
+
+![15](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/23.png).
+
+![16](https://github.com/Ivan-Shkutov/ansible-05-testing/blob/main/img/24.png).
+
+
+
